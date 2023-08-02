@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"); /* import for poppins*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  --dark-grey: #2d3142;
+  --light-grey: #a4a9bf;
+  background-color: #fff;
+}
+input,
+textarea,
+button {
+  font: inherit;
+}
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-container {
+  gap: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.login-form {
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.login-logo-wrapper{
+  width: 31.4375rem;
+  height: 3rem;
+}
+.login-logo {
+  width: 18rem;
+  height: 3rem;
+}
+.login-heading{
+  font-size: 1.25rem;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: var(--dark-grey);
+font-weight: 700;
+line-height: 1.75rem;
+width: 31.4375rem;
+  height: 3rem;
+}
+.email,
+.password {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--dark-grey);
+}
+.login-btn-wrapper {
+  padding: 1.5rem 0;
+}
+.login-btn {
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+  border: none;
+  color: #FFF;
+font-size: 1rem;
+font-family: Poppins;
+font-weight: 700;
+  background: var(--brand-green, #46b455);
+}
+.email-input,
+.password-input {
+  width: 31.4375rem;
+  height: 3rem;
+  border-radius:4px;
+  border: 1px solid var(--light-grey);
+  outline: none;
+  padding: 1rem;
+  color: var(--dark-grey);
+}
+.no-status{
+  position: fixed;
+  width: 100vw;
+  padding: 1rem 0;
+  text-align: center;
+  overflow-x: hidden;
+  color: blue;
+}
+.successfull::after{
+  content: "";
+  position:absolute;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color:#46b455;
+  height: .2rem;
+  border:1px solid #46b4555b;
+  animation-name: status;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+.unsuccessfull::after{
+  content: "";
+  position:absolute;
+  bottom:0;
+  left:0;
+  transform: scaleX(0);
+  width:100%;
+  transform-origin: left;
+  background-color:rgb(230, 62, 95);
+  border:1px solid rgba(230, 46, 83, 0.288);
+  height: .2rem;
+  animation-name: status;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+@keyframes status {
+  to{
+    transform: scaleX(1);
+  }
+}
+.no-status #form{
+  display: none;
+}
+@media (max-width:535px){
+  .email-input, .password-input, .login-logo-wrapper, .login-heading{
+    width:calc(89vw)
+  }
+}

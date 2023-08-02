@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    link(rel="icon", type="image/png", href="images/favicon/favicon.ico")
+    link(rel="stylesheet", href="styles/style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="theme-color", content="#000000")
+    title #{title} | AI-BOT
+  body#body(data-valid=`${valid}`)
+    .sidebar#sidebar 
+      .settings#settings 
+        .settings-img 
+          img(src="images/setting1.png", alt="settings icon").settings-icon
+      .temperature#temperature(gloss="1") 
+        label(for="temperature-input") Temperature
+        input(type="range" name="temperature" min="0" max="200" value="1").temperature-input#temperature-input.range-input
+      .word-length#word-length(gloss="256") 
+        label(for="word-length-input") Max length
+        input(type="range" name="word-length" min="1" max="3000" value="456").word-length-input#word-length-input.range-input
+      .start-text#start-text 
+        label(for="start-text-input") Restart text
+        input(type="text" name="start-text" min="1").start-text-input#start-text-input
+    div#root
+      include ../partials/header.pug
+      include ../partials/messageBox.pug
+      include ../partials/textarea.pug  
+    script(src="js/main.js")     

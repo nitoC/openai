@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        link(rel="shortcut icon" href="/favicon.ico")
+        link(rel="stylesheet" href="styles/login.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(name="theme-color" content="#000000")
+        title #{title} | AI-BOT
+    body
+        div(class=`no-status ${status}` id="no-status")
+            h3.status #{message}
+            form(action="/message" id="form" method="post" ).form
+                input(type="text" value=`${valid}` name='valid' id="form-element")
+                input(type="submit" id="valid")
+        .login-container 
+            .login-form-container 
+                .login-logo-wrapper 
+                    img.login-logo(src="images/logo.png" alt="logo")
+                .login-heading Please login to continue
+            form(action="/login" method="post").login-form 
+                .email 
+                    .label Email Address
+                    input.email-input(type="text" name="email")
+                .password 
+                    .label Password
+                    input.password-input(type="password" name="password") 
+                    .login-btn-wrapper 
+                        button.login-btn(type='submit') Log In
+
+
+        script(src="js/login.js")

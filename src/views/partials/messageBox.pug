@@ -1,0 +1,13 @@
+- let messages = message
+div.message-box#message-box
+    each msg in messages 
+        if msg.role === 'user'
+            div.message-wrapper.message-wrapper--user
+                div.message-text  #{msg.content}
+                div.identifier-wrapper
+                    div.message-identifier  ET
+        else
+            div.message-wrapper.message-wrapper--assistant
+                div.message-text  #{msg.content}
+                div.identifier-wrapper
+                    div.message-identifier AI
